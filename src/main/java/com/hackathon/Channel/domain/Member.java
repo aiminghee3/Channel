@@ -17,22 +17,13 @@ import javax.persistence.Id;
 public class Member {
 
     @Id
-    @Column(name = "email", nullable = false)
-    private String email;
-
-    @Column(name = "password", nullable = false)
-    private String password;
-
     @Column(name = "name", nullable = false)
     private String name;
 
     public Member() {
 
     }
-
-    public Member(String email, String password, String name) {
-        this.email = email;
-        this.password = password;
+    public Member(String name) {
         this.name = name;
     }
 }

@@ -20,27 +20,22 @@ public class MemberRepositoryImpl implements MemberRepository{
     }
 
     @Override
-    public String addUser(Member member) {
+    public String addUser(String name) {
+        Member member = new Member(name);
         em.persist(member);
         return "200";
     }
 
     @Override
-    public String deleteUser(String email) {
-        em.remove(em.find(Member.class, email));
+    public String deleteUser(String name) {
+        em.remove(em.find(Member.class, name));
         return "200";
     }
 
     @Override
-    public String updateUser(Member member) {
-        String password = member.getPassword();
-        String name = member.getName();
-        String email = member.getEmail();
-
-        em.createQuery("UPDATE Member A SET A.password = : password, A.name = : name WHERE A.email = : email")
-                .setParameter("password", password)
+    public String updateUser(String name) {
+        em.createQuery("UPDATE Member A SET A.name = : name WHERE A.name = : name")
                 .setParameter("name", name)
-                .setParameter("email", email)
                 .executeUpdate();
         return "200";
     }

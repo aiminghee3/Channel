@@ -22,18 +22,16 @@ public class MemberController {
         return memberService.readMembers();
     }
     @PostMapping("/join")
-    public String joinMember(@RequestParam String email, @RequestParam String password, @RequestParam String name){
-        Member member = new Member(email, password, name);
-        return memberService.join(member);
+    public String joinMember(@RequestParam String name){
+        return memberService.join(name);
     }
     @PostMapping("/delete")
-    public String deleteMember(@RequestParam String email){
-        return memberService.delete(email);
+    public String deleteMember(@RequestParam String name){
+        return memberService.delete(name);
     }
     @PostMapping("/update")
-    public String updateMember(@RequestParam String email, @RequestParam String password, @RequestParam String name){
-        Member member = new Member(email, password, name);
-        return memberService.update(member);
+    public String updateMember(@RequestParam String name){
+        return memberService.update(name);
     }
 
 }

@@ -6,8 +6,8 @@ import java.util.List;
 
 public interface MemberRepository {
 
-    public String addUser(Member member);
-    public String deleteUser(String email);
-    public String updateUser(Member member);
+    public String addUser(String name);
+    public String deleteUser(String name);
+    public String updateUser(String name);
     public List<Member> readMembers();
 }

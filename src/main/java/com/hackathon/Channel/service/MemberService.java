@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface MemberService {
 
-    public String join(Member member);
-    public String delete(String email);
-    public String update(Member member);
+    public String join(String name);
+    public String delete(String name);
+    public String update(String name);
     public List<Member> readMembers();
 
 }

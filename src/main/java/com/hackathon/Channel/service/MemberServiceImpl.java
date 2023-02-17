@@ -22,9 +22,8 @@ public class MemberServiceImpl implements MemberService{
      * 회원가입
      */
     @Override
-    public String join(Member member) {
-        memberRepository.addUser(member);
-        return null;
+    public String join(String name) {
+        return memberRepository.addUser(name);
     }
 
     /**
@@ -32,16 +31,14 @@ public class MemberServiceImpl implements MemberService{
      */
     @Override
     public String delete(String email) {
-        memberRepository.deleteUser(email);
-        return null;
+        return memberRepository.deleteUser(email);
     }
     /**
      * 회원 업데이트
      */
     @Override
-    public String update(Member member) {
-        memberRepository.updateUser(member);
-        return null;
+    public String update(String name) {
+        return memberRepository.updateUser(name);
     }
 
     /**
